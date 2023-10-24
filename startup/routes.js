@@ -12,7 +12,7 @@ const employee_technology =require('../routes/employee_technology')
 const employee =require('../routes/employee')
 const offer = require('../routes/offer')
 const auth = require('../routes/auth')
-const auth = require('../routes/welcome')
+const welcome = require('../routes/welcome')
 
 module.exports=function(app){
     app.use(bodyParser.json())
@@ -22,7 +22,7 @@ module.exports=function(app){
     app.use('/api',project)
     app.use('/api',pay_plan)
     app.use('/api',state)
-    app.use('/',)
+    app.use('/',welcome)
     app.use('/api/employees_projects',employee_project)
     app.use('/api/employees_languages',employee_language)
     app.use('/api/employees_technologies',employee_technology)
