@@ -14,6 +14,6 @@ require('./startup/routes')(app);
 app.listen({port:3000},async()=>{
     //console.log('Server running on port 3000')
     logger.info('Server running on port 3000')
-    await sequelize.authenticate()
-    logger.info('database synced')
+    // await sequelize.authenticate()
+    // logger.info('database synced')
 })
