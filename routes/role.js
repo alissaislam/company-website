@@ -11,7 +11,7 @@ res.send(role);
 }
 });
 
-router.get('/all',auth(['HR manager']),async(req,res)=>{
+router.get('/all',async(req,res)=>{
   try
   {
     const roles=  await   Role.findAll()
@@ -37,12 +37,12 @@ router.put('/:id',auth(['HR manager']),async(req,res)=>{
       });
 
       
-      router.post('/create',auth(['HR manager']),async(req,res)=>{
+      router.post('/create/:name',async(req,res)=>{
 
         const {error}= Role.validateRole(req.body);
           if(error) return res.status(400).send(error.details[0].message);
       
-        Role.create({name:req.body.name}).then((role)=>{
+        Role.create({name:req.params.name}).then((role)=>{
             res.send(role)
         }).catch((err)=>{
             res.send(err.message)
