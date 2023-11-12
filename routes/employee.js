@@ -89,7 +89,7 @@ router.get('/all',auth(['manager','Owner','HR manager']),async(req,res)=>{
     }
 });
 
-router.post('/',[auth(['HR manager']),upload.single('photo')],async(req,res)=>{
+router.post('/',[upload.single('photo')],async(req,res)=>{
     try{
     const {error}=Employee.validateEmployee(req.body)
     if(error) return res.status(400).send(error.details[0].message);
