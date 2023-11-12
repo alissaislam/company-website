@@ -15,6 +15,14 @@ if (config.use_env_variable) {
 } else {
   sequelize = new Sequelize(config.database, config.username, config.password, config);
 }
+//  sequelize = new Sequelize({
+//   username: process.env.DB_USERNAME,
+//   password:process.env.DB_PASSWORD,
+//   database:process.env.DB_DATABASE,
+//   dialect:'mysql',
+//   port:process.env.DB_PORT,
+//   host:process.env.DB_HOST
+// });
 
 fs
   .readdirSync(__dirname)

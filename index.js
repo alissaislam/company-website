@@ -1,4 +1,4 @@
-const {sequelize} = require('./models')
+const sequelize = require('./db/conn')
 const config = require('config')
 const express = require('express')
 const app = express()
