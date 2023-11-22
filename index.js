@@ -11,7 +11,7 @@ require('./startup/logging')();
 require('./startup/routes')(app);
 
 
-app.listen({port:3000},async()=>{
+app.listen({port:process.env.PORT},async()=>{
     //console.log('Server running on port 3000')
     logger.info('Server running on port', process.env.PORT)
     await sequelize.sync()
